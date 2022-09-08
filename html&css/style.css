@@ -42,6 +42,12 @@ body {
   border-radius: 10px;
   color: white;
   font-size: 20px;
+  transition: 0.2s;
+}
+.signup-btn:hover {
+  background-color: white;
+  color: rgb(96, 122, 236);
+  transition: 0.2s;
 }
 .section-1 {
   max-width: 1380px;
