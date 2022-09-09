@@ -2,6 +2,7 @@
 body {
   background-color: #121923;
   background-size: cover;
+  margin: 0;
 }
 .navbar {
   max-width: 1200px;
@@ -50,11 +51,11 @@ body {
   transition: 0.2s;
 }
 .section-1 {
-  max-width: 1380px;
+  max-width: 1280px;
   height: 100%;
-  margin: auto;
+  margin: 0 auto;
   position: relative;
-  /* background: url(bg.jpg); */
+  background: url(bg.jpg);
   /* background-color: #121923; */
   /* background-image: url(bg.jpg); */
   background-repeat: no-repeat;
@@ -64,6 +65,8 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Philosopher", sans-serif;
+  border-bottom-right-radius: 160px;
+  border-bottom-left-radius: 160px;
 }
 .login {
   display: flex;
@@ -89,12 +92,12 @@ p {
 }
 .container {
   width: 100%;
-  height: 80vh;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-around;
   align-items: center;
-  margin-top: 10px;
+  margin-bottom: 50px;
 }
 .box {
   width: 200px;
@@ -152,12 +155,8 @@ a {
   font-family: "Josefin Sans", sans-serif;
   max-width: 350px;
   padding: 1rem;
-  /* margin-top: 1rem; */
   color: rgb(255, 255, 255);
   border-width: 3px;
-  border-style: solid;
-  /* border-image: linear-gradient(to bottom, rgb(145, 255, 231), rgba(0, 0, 0, 0))
-    1 100%; */
   border-image: linear-gradient(to bottom, rgb(0, 255, 221), rgba(1, 0, 0, 0)) 1
     100%;
 }
@@ -166,7 +165,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 /* -------------
@@ -175,7 +174,8 @@ section extra
 
 .extra-section {
   font-family: "Raleway", sans-serif;
-  background-image: radial-gradient(circle at center, #899dc4, #495d84);
+  position: relative;
+  /* background-image: radial-gradient(circle at center, #899dc4, #495d84); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -183,8 +183,9 @@ section extra
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(ellipse at bottom, #1b2735, #090a0f);
+  /* background: radial-gradient(ellipse at bottom, #1b2735, #090a0f); */
   font-weight: 300;
+  margin-top: 3rem;
 }
 .all {
   display: flex;
@@ -276,12 +277,16 @@ section extra
 .explainer {
   font-weight: 300;
   font-size: 2rem;
-  color: #fff;
+  color: rgb(0, 0, 0);
   transition: all 0.6s ease;
   width: 100%;
   height: 100%;
   background-color: #303050;
-  background-image: radial-gradient(circle at center top, #cce, #33a);
+  background-image: radial-gradient(
+    circle at center top,
+    #cce,
+    rgb(250, 59, 25)
+  );
   border-radius: 10px;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 
