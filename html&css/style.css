@@ -52,9 +52,6 @@ body {
 .section-1 {
   height: 100%;
   margin: 0 auto;
-  /* background: url(bg.jpg); */
-  /* background-color: #121923; */
-  /* background-repeat: no-repeat; */
   background-size: contain;
   display: flex;
   overflow: hidden;
@@ -329,8 +326,14 @@ section extra
     background-size: cover;
     margin: 0;
   }
-  .navbar {
-    display: none;
+  .nav-flex-column {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .login {
+    margin-top: 0px;
   }
   .login-heading {
     font-size: 1rem;
@@ -349,7 +352,7 @@ section extra
     margin: 0 1rem;
   }
   .button {
-    padding: 7px 16px;
+    padding: 10px 20 px;
     width: 5rem;
     font-size: 14px;
     font-weight: 700;
@@ -391,15 +394,10 @@ section extra
     order: 1;
     height: 90%;
   }
-  /* .explainer {
-    padding: 10px;
-    border: none;
-  } */
   .text {
     font-family: josefin sans;
     height: 100%;
     font-weight: 600;
     font-size: 1.6rem;
-    /* color: rgb(255, 255, 255); */
   }
 }
