@@ -114,7 +114,7 @@ p {
 .box {
   width: 200px;
   height: 150px;
-  padding: 15px;
+  padding: 35px;
   border-radius: 60% 40% 40% 20%;
   box-shadow: rgb(222, 184, 248) 5px 5px 40px;
 }
@@ -129,6 +129,10 @@ input {
   border: none;
   border-radius: 15px;
   margin: 10px 0;
+}
+input:hover {
+  box-shadow: rgb(221, 247, 178) -8px 5px 20px;
+  border: none;
 }
 .button {
   background-color: rgb(96, 122, 236);
@@ -320,6 +324,18 @@ section extra
  responsive 
  ------------------*/
 @media only screen and (max-width: 644px) {
+  body {
+    background-image: url(bg.jpg);
+    background-size: cover;
+    margin: 0;
+  }
+  .navbar {
+    display: none;
+  }
+  .login-heading {
+    font-size: 1rem;
+  }
+
   h1 {
     font-size: 3rem;
     text-align: center;
@@ -336,10 +352,11 @@ section extra
     padding: 7px 16px;
     width: 5rem;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 700;
   }
   .product {
-    margin-top: 6rem;
+    /* margin-top: rem; */
+    margin: 2rem;
   }
 
   /* -------------------------- */
@@ -351,35 +368,38 @@ section extra
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     align-items: center;
   }
   .left {
     transform: translateX(0px) translateZ(0px) rotateY(0deg);
     order: 2;
-    /* margin: 30px; */
   }
   .right {
     transform: translateX(0px) translateZ(0px) rotateY(0deg);
     order: 2;
-    /* margin: 30px; */
   }
   .righter {
     transform: translateX(0px) translateZ(0px) rotateY(0deg);
     order: 2;
-    /* margin: 30px; */
   }
   .lefter {
     transform: translateX(0px) translateZ(0px) rotateY(0deg);
     order: 2;
-    /* margin: 30px; */
   }
   .center {
     order: 1;
-    height: 20%;
-    /* margin: 30px; */
+    height: 90%;
   }
-  /* .text {
-    
+  /* .explainer {
+    padding: 10px;
+    border: none;
   } */
+  .text {
+    font-family: josefin sans;
+    height: 100%;
+    font-weight: 600;
+    font-size: 1.6rem;
+    /* color: rgb(255, 255, 255); */
+  }
 }
