@@ -6,13 +6,13 @@ body {
 }
 .navbar {
   font-family: Philosopher;
-  margin: 10px 25px;
+  margin: 20px 25px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 .nav-img {
-  width: 80px;
+  width: 50px;
 }
 .nav-item {
   width: 50%;
@@ -21,7 +21,7 @@ body {
   font-weight: 500;
   justify-content: space-evenly;
   align-items: flex-end;
-  list-style: none;
+  text-decoration: none;
   color: white;
   transition: 0.2s;
   padding: 12px;
@@ -332,6 +332,15 @@ section extra
     align-items: center;
     margin-bottom: 40px;
   }
+  .right-nav {
+    position: fixed;
+    height: 100vh;
+    background: hsl(283, 100%, 63%);
+    right: 0px;
+    top: 0px;
+    padding: 0rem 5rem;
+    z-index: 1;
+  }
   .login {
     margin-top: 0px;
   }
@@ -354,7 +363,7 @@ section extra
   .button {
     padding: 10px 20 px;
     width: 5rem;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 700;
   }
   .product {
