@@ -38,7 +38,7 @@ body {
   text-decoration: none;
 }
 .nav-attribute:hover {
-  color: rgb(221, 247, 178);
+  color: #ffffff;
   transition: 0.2s ease-out;
 }
 .right-nav {
@@ -59,6 +59,9 @@ body {
   color: rgb(96, 122, 236);
   transition: 0.2s;
 }
+.menu {
+  display: none;
+}
 .section-1 {
   margin: 0 auto 0 auto;
   background-size: contain;
@@ -72,7 +75,7 @@ body {
 }
 .login-heading {
   font-size: 2.5rem;
-  color: rgb(221, 247, 178);
+  color: #ffffff;
 }
 .login {
   display: flex;
@@ -87,28 +90,96 @@ body {
 }
 h1 {
   font-size: 4rem;
-  color: #fdeedc;
+  color: #ffffff;
   border-radius: 15px;
   padding: 15px;
 }
 .special-color {
   color: rgb(0, 255, 221);
 }
-input {
-  background: none;
-  box-shadow: rgb(221, 247, 178) -3px 5px 10px;
-  font-size: 17px;
-  color: #ffffff;
-  padding: 10px 10px;
-  width: 20rem;
-  border: none;
-  border-radius: 15px;
+/* ----------------------- */
+.input-field {
+  position: relative;
+  height: 50px;
+  width: 280px;
+  border-radius: 6px;
+  background-color: #fff;
   margin: 10px 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-input:hover {
-  box-shadow: rgb(221, 247, 178) -8px 5px 20px;
+.input-field input {
+  height: 100%;
+  width: 90%;
   border: none;
+  outline: none;
+  border-radius: 6px;
+  padding: 0 15px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
 }
+input::placeholder {
+  color: #b4b4b4;
+}
+.input-field .email-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: #b4b4b4;
+}
+/* -----------------
+password validation
+------ -------------*/
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  position: absolute;
+  top: 325px;
+  left: 850px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 16px;
+}
+#passOk {
+  display: inline;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: #b4b4b4;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: rgb(20, 185, 20);
+}
+
+.valid:before {
+  position: relative;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  content: "✖";
+}
+
+/* =================== */
 .button {
   background: linear-gradient(-225deg, #ac32e4 0%, #7918f2 48%, #4801ff 100%);
   padding: 10px 20px;
@@ -126,7 +197,9 @@ input:hover {
     rgb(219, 2, 234) 90%
   );
   color: white;
-  transform: translate(-2px, 1px);
+}
+.button:active {
+  transform: translate(-5px, 5px);
 }
 .auth-link {
   margin: 8px;
@@ -175,8 +248,8 @@ a {
   transition: all 0.4s;
 }
 .product-name {
-  font-size: 1.5rem;
-  color: #fdeedc;
+  font-size: 1.7rem;
+  color: #1635e4;
 }
 .container .product .box {
   width: 325px;
@@ -399,19 +472,86 @@ section extra
   }
   .nav-flex-column {
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nav-btn-flex-column {
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
   }
   .right-nav {
     position: fixed;
     height: 100vh;
     background: hsl(283, 100%, 63%);
-    right: 0px;
     top: 0px;
     padding: 0rem 5rem;
     z-index: 1;
+    transition: all 0.6s;
+    right: -300px;
   }
+  .back {
+    right: 0px;
+  }
+  .nav-item {
+    margin-bottom: 30px;
+  }
+  /* ----------hambergar menu */
+
+  .menu {
+    background-color: transparent;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+    right: 10px;
+    top: 5px;
+    transition: all 0.7s;
+  }
+  .menu-location {
+    right: 200px;
+    transition: all 0.7s;
+  }
+  .line {
+    fill: none;
+    stroke: black;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+  }
+  .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+  .opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+  }
+  .opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+  /* /-----------------*  */
+
   .login {
     margin-top: 0px;
   }

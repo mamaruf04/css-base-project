@@ -10,6 +10,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <!-- Unicons CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <!-- nav css menu -->
+    <link href="https://css.gg/menu-right.css" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -18,7 +25,23 @@
           <img class="nav-img" src="img/logo.png" alt="" />
         </div>
         <div>
-          <div class="right-nav nav-flex-column">
+          <!-- <i class="gg-menu-right" onclick="myFunction(this)"></i> -->
+          <!-- ham bargar menu -->
+          <button class="menu" onclick="myFunction()" aria-label="Main Menu">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+              <path
+                class="line line1"
+                d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+              />
+              <path class="line line2" d="M 20,50 H 80" />
+              <path
+                class="line line3"
+                d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+              />
+            </svg>
+          </button>
+          <!-- ----- -->
+          <div class="right-nav nav-btn-flex-column">
             <div class="nav-item nav-flex-column">
               <a href="" class="nav-attribute">Home</a>
               <a href="" class="nav-attribute">Products</a>
@@ -35,14 +58,47 @@
     <section class="section-1">
       <div class="login">
         <h2 class="login-heading">To save your contribution please login</h2>
-        <input placeholder="Email" type="text" />
-        <input placeholder="Password" type="password" />
+        <!-- <input placeholder="Email" type="text" /> -->
+        <div class="input-field">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            spellcheck="false"
+          />
+          <i class="uil uil-envelope email-icon"></i>
+        </div>
+        <!-- -------------------- -->
+        <!-- <input placeholder="Password" type="password" /> -->
+        <div class="input-field">
+          <input
+            placeholder="Enter your password"
+            type="password"
+            id="psw"
+            name="psw"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+            required
+          />
+          <i class="uil uil-check-circle" id="passOk"></i>
+          <!-- <i id="passOk" class="uil uil-envelope email-icon"></i> -->
+        </div>
+        <!-- ----------- pass valid signal-->
+        <div id="message">
+          <h3>Password must contain the following:</h3>
+          <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+          <p id="capital" class="invalid">
+            A <b>capital (uppercase)</b> letter
+          </p>
+          <p id="number" class="invalid">A <b>number</b></p>
+          <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+        </div>
+        <!-- ------- -->
         <a class="auth-link special-color" href="http://google.com"
           >forgot password</a
         >
         <button class="button">login</button>
         <div>
-          <a class="auth-link special-color" href="http://"
+          <a class="auth-link special-color" href=""
             ><span class="colour-White">Don't have an account?</span> Sign in
           </a>
         </div>
@@ -201,4 +257,5 @@
       <!--Waves end-->
     </section>
   </body>
+  <script src="script.js"></script>
 </html>
