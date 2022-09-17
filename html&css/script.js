@@ -117,7 +117,7 @@
         mainMenu.classList.toggle("menu-location");
         menu.classList.toggle('opened');
         menu.setAttribute('aria-expanded',
-        menu.classList.contains('opened'));
+        menu.classList.contains('opened')); 
     }
 
    

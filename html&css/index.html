@@ -25,7 +25,6 @@
           <img class="nav-img" src="img/logo.png" alt="" />
         </div>
         <div>
-          <!-- <i class="gg-menu-right" onclick="myFunction(this)"></i> -->
           <!-- ham bargar menu -->
           <button class="menu" onclick="myFunction()" aria-label="Main Menu">
             <svg width="100" height="100" viewBox="0 0 100 100">
@@ -58,7 +57,7 @@
     <section class="section-1">
       <div class="login">
         <h2 class="login-heading">To save your contribution please login</h2>
-        <!-- <input placeholder="Email" type="text" /> -->
+        <!-- Email input----- -->
         <div class="input-field">
           <input
             type="email"
@@ -67,8 +66,7 @@
           />
           <i class="uil uil-envelope email-icon"></i>
         </div>
-        <!-- -------------------- -->
-        <!-- <input placeholder="Password" type="password" /> -->
+        <!-- password input-->
         <div class="input-field">
           <input
             placeholder="Enter your password"
@@ -80,15 +78,11 @@
             required
           />
           <i class="uil uil-check-circle" id="passOk"></i>
-          <!-- <i id="passOk" class="uil uil-envelope email-icon"></i> -->
         </div>
-        <!-- ----------- pass valid signal-->
+        <!------------- password valid signal-->
         <div id="message">
-          <h3>Password must contain the following:</h3>
           <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-          <p id="capital" class="invalid">
-            A <b>capital (uppercase)</b> letter
-          </p>
+          <p id="capital" class="invalid">A <b>uppercase</b> letter</p>
           <p id="number" class="invalid">A <b>number</b></p>
           <p id="length" class="invalid">Minimum <b>8 characters</b></p>
         </div>

@@ -139,14 +139,14 @@ password validation
   background: #f1f1f1;
   color: #000;
   position: absolute;
-  top: 325px;
-  left: 850px;
-  padding: 20px;
-  border-radius: 20px;
+  top: 360px;
+  left: 825px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 #message p {
-  padding: 10px 35px;
+  padding: 5px 10px;
   font-size: 16px;
 }
 #passOk {
@@ -249,7 +249,8 @@ a {
 }
 .product-name {
   font-size: 1.7rem;
-  color: #1635e4;
+  /* color: crimson; */
+  /* color: linear-gradient(-225deg, #ac32e4 0%, #7918f2 48%, #4801ff 100%); */
 }
 .container .product .box {
   width: 325px;
@@ -266,15 +267,12 @@ section extra
 .extra-section {
   font-family: "Raleway", sans-serif;
   position: relative;
-  /* background-image: radial-gradient(circle at center, #899dc4, #495d84); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
-  /* overflow: hidden; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: radial-gradient(ellipse at bottom, #1b2735, #090a0f); */
   font-weight: 300;
   margin-top: 3rem;
 }
@@ -312,7 +310,7 @@ section extra
   height: 150px;
   transform-style: preserve-3d;
   border-radius: 10px;
-  border: 1px solid #fff;
+  margin: 5px;
   box-shadow: 0 0 20px 5px rgba(170, 53, 248, 0.4);
   opacity: 1;
   transition: all 0.3s ease;
@@ -509,12 +507,17 @@ section extra
     height: 60px;
     z-index: 2;
     right: 10px;
-    top: 5px;
+    top: 0px;
     transition: all 0.7s;
+    background: hsl(283, 100%, 63%);
   }
   .menu-location {
     right: 200px;
     transition: all 0.7s;
+  }
+  button svg {
+    background-color: hsl(283, 100%, 63%);
+    border-radius: 50px;
   }
   .line {
     fill: none;
@@ -557,6 +560,21 @@ section extra
   }
   .login-heading {
     font-size: 1rem;
+  }
+  #message {
+    left: 120px;
+    top: 130px;
+    z-index: 2;
+    padding: 10px;
+  }
+  #message h3 {
+    display: none;
+  }
+  #message p {
+    padding: 0px 0px;
+    font-size: 16px;
+    margin-block-start: 5px;
+    margin-block-end: 0em;
   }
 
   h1 {
