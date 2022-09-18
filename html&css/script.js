@@ -1,4 +1,6 @@
-//------------ Email validation---------------
+//--------------------------------------
+// Email validation
+// -------------------------------------
       const input = document.querySelector("input"),
         emailIcon = document.querySelector(".email-icon");
 
@@ -17,9 +19,9 @@
         }
       });
 
-      // --------------------
+      // -------------------------------------------------
       // password Validation
-      // ---------------------
+      // -----------------------------------------------
       let myInput = document.getElementById("psw");
       let letter = document.getElementById("letter");
       let capital = document.getElementById("capital");
@@ -80,11 +82,13 @@
           length.classList.remove("valid");
           length.classList.add("invalid");
         }
-
+        
+        // empty input value icon dim.
         if (myInput.value === "") {
           return (circleIcon.style.color = "#b4b4b4");
         }
 
+        // when all criteria approve, icon will provide green signal.
         if (
           myInput.value.match(lowerCaseLetters) &&
           myInput.value.match(upperCaseLetters) &&
@@ -101,11 +105,9 @@
         }
       };
 
-    //   -----------
-    //   responsive
-    //   -------------------
-
-    // const menu =document.querySelector(".gg-menu-right");
+    //   ----------------------------------
+    //   responsive hamburger menu
+    //   -----------------------------------
     
     const rightNav = document.querySelector(".right-nav");
     
