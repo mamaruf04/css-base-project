@@ -77,6 +77,9 @@ body {
   font-size: 2.5rem;
   color: #ffffff;
 }
+.login-heading-mbl {
+  display: none;
+}
 .login {
   display: flex;
   flex-direction: column;
@@ -104,7 +107,7 @@ h1 {
   width: 280px;
   border-radius: 6px;
   background-color: #fff;
-  margin: 10px 0;
+  margin: 12px 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 .input-field input {
@@ -263,7 +266,9 @@ a {
 /* -------------
 section extra
 ---------------- */
-
+.brand-heading-mbl {
+  display: none;
+}
 .extra-section {
   font-family: "Raleway", sans-serif;
   position: relative;
@@ -302,8 +307,8 @@ section extra
   opacity: 0;
 }
 .left,
-.center,
 .right,
+.center,
 .lefter,
 .righter {
   width: 200px;
@@ -357,7 +362,6 @@ section extra
 }
 .center {
   opacity: 1;
-  /* background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/app_window-512.png); */
   background-image: url(img/lp5.png);
 }
 .right {
@@ -382,13 +386,7 @@ section extra
     rgb(175, 104, 254) 9.3%,
     rgb(101, 223, 255) 75.1%
   );
-  /* background-image: radial-gradient(
-    circle at center top,
-    rgb(207, 140, 252),
-    rgb(58, 94, 255)
-  ); */
   border-radius: 10px;
-  /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.514); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -553,7 +551,13 @@ section extra
     margin-top: 0px;
   }
   .login-heading {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+  .login-heading-mbl {
+    display: block;
+  }
+  .login-heading-pc {
+    display: none;
   }
   #message {
     left: 120px;
@@ -596,36 +600,38 @@ section extra
 
   /* -------------------------- */
 
+  .brand-heading-mbl {
+    display: block;
+    font-size: 2.5rem;
+    color: white;
+  }
+  .extra-section {
+    margin-top: 0;
+  }
   .all {
     flex-direction: column;
     perspective: 0px;
     transform: perspective(00px) rotateX(0deg);
-    height: 100%;
-    width: 100%;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
-  .left {
-    transform: translateX(0px) translateZ(0px) rotateY(0deg);
-    order: 2;
-  }
-  .right {
-    transform: translateX(0px) translateZ(0px) rotateY(0deg);
-    order: 2;
-  }
+  .left,
+  .right,
+  .lefter,
   .righter {
     transform: translateX(0px) translateZ(0px) rotateY(0deg);
     order: 2;
-  }
-  .lefter {
-    transform: translateX(0px) translateZ(0px) rotateY(0deg);
-    order: 2;
+    width: 184px;
   }
   .center {
-    order: 1;
-    height: 90%;
+    display: none;
   }
+  .explainer {
+    width: 100%;
+    height: 80%;
+  }
+
   .text {
     font-family: josefin sans;
     height: 100%;
