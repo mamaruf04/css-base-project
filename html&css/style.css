@@ -191,9 +191,10 @@ password validation
   border-radius: 10px;
   color: white;
   font-size: 20px;
+  font-weight: 700;
   transition: 0.2s;
   border: none;
-  margin: 15px 0;
+  margin: 30px 0 15px 0;
 }
 .button:hover {
   background: radial-gradient(
@@ -291,6 +292,10 @@ a {
   border: none;
   list-style: none;
   align-items: center;
+}
+.price {
+  color: rgb(255, 0, 0);
+  font-size: 28px;
 }
 
 /* -------------
@@ -487,9 +492,9 @@ section extra
     transform: translate3d(85px, 0, 0);
   }
 }
-/*-----------------
+/*-----------------------------------------------
  responsive 
- ------------------*/
+ ----------------------------------------------*/
 @media only screen and (max-width: 644px) {
   body {
     background-image: url(bg.jpg);
@@ -618,13 +623,10 @@ section extra
     margin: 0 1rem;
   }
   .button {
-    padding: 10px 20 px;
-    width: 5rem;
-    font-size: 20px;
-    font-weight: 700;
+    width: 180px;
+    justify-content: center;
   }
   .product {
-    /* margin-top: rem; */
     margin: 2rem;
   }
 
