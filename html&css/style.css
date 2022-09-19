@@ -106,7 +106,6 @@ h1 {
   height: 50px;
   width: 280px;
   border-radius: 6px;
-  background-color: #fff;
   margin: 12px 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -120,6 +119,7 @@ h1 {
   font-size: 15px;
   font-weight: 400;
   color: #333;
+  background-color: lightcyan;
 }
 input::placeholder {
   color: #b4b4b4;
@@ -288,10 +288,19 @@ a {
   color: white;
   background: none;
   font-size: 19px;
-  /* font-weight: 500; */
   border: none;
   list-style: none;
   align-items: center;
+}
+.reset-product {
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  border: none;
+  list-style: none;
+  align-items: center;
+  color: lightcyan;
+  background: rgb(255, 0, 0);
 }
 .price {
   color: rgb(255, 0, 0);

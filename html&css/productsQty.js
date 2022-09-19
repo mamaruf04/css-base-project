@@ -1,10 +1,18 @@
 // product input
-const productInput = document.getElementById("productInput1");
+// const productInput = document.getElementById("productInput1");
 // product price 
-const productPrice = document.getElementById("productPrice");
+// const productPrice = document.getElementById("productPrice1");
 
 // increase & decrease function.
-const counter = (isIncrease) =>{
+const counter = (productNumber, isIncrease, Price) =>{
+
+    // product price 
+    const productPrice = document.getElementById('productPrice'+productNumber);
+
+    // product quantity input field
+    const productInput = document.getElementById('productInput'+ productNumber);
+
+    // product quantity increase.
     let productInputValue = productInput.value;
     if(isIncrease){
         productInputValue ++;
@@ -15,23 +23,104 @@ const counter = (isIncrease) =>{
     else{
         alert("please add some quantities.");
     }
+
+    // update product value.
     productInput.value = productInputValue;
+
     // product price based on quantity.
-    let totalPrice = productInputValue * 1150;
+    let totalPrice = productInputValue * Price;
     productPrice.innerText = totalPrice;
 }
 
 
-// minus button.
+// minus button product-1.
 document.getElementById("ProductMinus1").addEventListener('click', () => {
 
-    counter(false);
+    counter(1,false,1150);
 
 });
 
-// plus button.
+// plus button product-1.
 document.getElementById("ProductPlus1").addEventListener('click', () => {
 
-    counter(true);
+    counter(1,true,1150);
+
+});
+// minus button product-2.
+document.getElementById("ProductMinus2").addEventListener('click', () => {
+
+    counter(2,false,1250);
+
+});
+
+// plus button product-2.
+document.getElementById("ProductPlus2").addEventListener('click', () => {
+
+    counter(2,true,1250);
+
+});
+// minus button product-3.
+document.getElementById("ProductMinus3").addEventListener('click', () => {
+
+    counter(3,false,1150);
+
+});
+
+// plus button product-3.
+document.getElementById("ProductPlus3").addEventListener('click', () => {
+
+    counter(3,true,1150);
+
+});
+// minus button product-4.
+document.getElementById("ProductMinus4").addEventListener('click', () => {
+
+    counter(4,false,1150);
+
+});
+
+// plus button product-4.
+document.getElementById("ProductPlus4").addEventListener('click', () => {
+
+    counter(4,true,1150);
+
+});
+// minus button product-5.
+document.getElementById("ProductMinus5").addEventListener('click', () => {
+
+    counter(5,false,1150);
+
+});
+
+// plus button product-5.
+document.getElementById("ProductPlus5").addEventListener('click', () => {
+
+    counter(5,true,1150);
+
+});
+// minus button product-6.
+document.getElementById("ProductMinus6").addEventListener('click', () => {
+
+    counter(6,false,1150);
+
+});
+
+// plus button product-6.
+document.getElementById("ProductPlus6").addEventListener('click', () => {
+
+    counter(6,true,1150);
+
+});
+// minus button product-7.
+document.getElementById("ProductMinus7").addEventListener('click', () => {
+
+    counter(7,false,1150);
+
+});
+
+// plus button product-7.
+document.getElementById("ProductPlus7").addEventListener('click', () => {
+
+    counter(7,true,1150);
 
 });
