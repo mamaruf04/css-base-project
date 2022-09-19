@@ -38,7 +38,7 @@ body {
   text-decoration: none;
 }
 .nav-attribute:hover {
-  color: rgb(96, 122, 236);
+  color: #ff6263;
   transition: 0.2s ease-out;
 }
 .right-nav {
@@ -47,16 +47,16 @@ body {
   justify-content: space-between;
 }
 .signup-btn {
-  background-color: rgb(96, 122, 236);
+  background-color: #5920cb;
   padding: 10px 15px;
   border-radius: 10px;
   color: white;
-  font-size: 24px;
+  font-size: 22px;
   transition: 0.2s;
 }
 .signup-btn:hover {
   background-color: white;
-  color: rgb(96, 122, 236);
+  color: #5920cb;
   transition: 0.2s;
 }
 .menu {
@@ -74,7 +74,9 @@ body {
   /* color: rgba(136, 33, 255, 0.568); */
 }
 .lock-icon {
-  width: 200px;
+  width: 150px;
+  margin: 0;
+  padding: 0;
 }
 .login-heading {
   font-size: 2.5rem;
@@ -88,10 +90,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 65px;
-  padding: 10px;
+  margin-top: 50px;
+  padding: 25px 0 45px 0;
   border-width: 6px;
   border-style: solid;
+  background-color: #5920cb;
+  border-radius: 25px;
   border-image: linear-gradient(to bottom, #e0ffff, rgba(0, 0, 0, 0)) 1 100%;
   /* order: 2; */
 }
@@ -102,13 +106,13 @@ h1 {
   padding: 15px;
 }
 .special-color {
-  color: rgb(0, 255, 221);
+  color: #ff6263;
 }
 /* ----------------------- */
 .input-field {
   position: relative;
   height: 50px;
-  width: 280px;
+  width: 350px;
   border-radius: 6px;
   margin: 12px 0;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -127,7 +131,6 @@ h1 {
 }
 input::placeholder {
   color: #b4b4b4;
-  /* color: rgb(255, 76, 160); */
 }
 .input-field .email-icon {
   position: absolute;
@@ -144,13 +147,14 @@ password validation
 /* The message box is shown when the user clicks on the password field */
 #message {
   display: none;
-  background: white;
+  background: whitesmoke;
   color: #000;
   position: absolute;
-  top: 360px;
-  left: 825px;
+  top: 270px;
+  left: 840px;
   padding: 10px;
   border-radius: 10px;
+  box-shadow: 1px 1px 10px;
 }
 
 #message p {
@@ -169,19 +173,16 @@ password validation
 
 /* Add a green text color and a checkmark when the requirements are right */
 .valid {
-  color: rgb(20, 185, 20);
+  color: #00d84a;
 }
-
 .valid:before {
   position: relative;
   content: "✔";
 }
-
 /* Add a red text color and an "x" when the requirements are wrong */
 .invalid {
-  color: red;
+  color: #e21717;
 }
-
 .invalid:before {
   position: relative;
   content: "✖";
@@ -215,11 +216,11 @@ password validation
 .auth-link {
   margin: 8px;
   font-size: 1.2rem;
-  /* color: rgb(96, 122, 236); */
+  color: #ffffff;
   font-weight: 500;
 }
-.colour-White {
-  color: #ffffff;
+.colour-black {
+  color: black;
 }
 a {
   text-decoration: none;
@@ -590,6 +591,17 @@ section extra
   .login {
     margin-top: 0px;
     /* order: 2; */
+    background: none;
+    padding: 0px 0 45px 0;
+  }
+  .input-field {
+    width: 300px;
+  }
+  .colour-black {
+    color: lightcyan;
+  }
+  .auth-link {
+    color: #a65eff;
   }
   .login-heading {
     font-size: 1.2rem;
