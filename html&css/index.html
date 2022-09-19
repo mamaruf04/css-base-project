@@ -19,6 +19,8 @@
     <link href="https://css.gg/menu-right.css" rel="stylesheet" />
     <!-- add to card icon -->
     <link href="https://css.gg/shopping-cart.css" rel="stylesheet" />
+    <!-- login secure icon -->
+    <!-- <link href="https://css.gg/lock.css" rel="stylesheet" /> -->
   </head>
   <body>
     <header>
@@ -58,16 +60,18 @@
     </header>
     <section class="section-1">
       <div class="login">
+        <!-- <i class="gg-lock"></i> -->
+        <img class="lock-icon" src="img/file.png" alt="" />
         <!-- img for pc only. -->
         <img
           class="login-heading login-heading-pc"
-          src="https://readme-typing-svg.herokuapp.com?font=Philosopher&size=45&pause=1000&color=FFFFFF&center=true&vCenter=true&width=830&height=100&lines=To+save+your+contribution+please+login...;Next+time+you+can+access+your+data+easily+"
+          src="https://readme-typing-svg.herokuapp.com?font=Philosopher&size=35&pause=1000&color=e0ffff&center=true&vCenter=true&width=830&height=100&lines=To+save+your+contribution+please+login...;Next+time+you+can+access+your+data+easily+"
           alt="To save your contribution please login..."
         />
         <!-- img for mbl only. -->
         <img
           class="login-heading login-heading-mbl"
-          src="https://readme-typing-svg.herokuapp.com?font=Philosopher&size=22&pause=500&color=FFFFFF&center=true&vCenter=true&width=460&height=50&lines=To+save+your+contribution+please+login...;Next+time+you+can+access+it+easily+"
+          src="https://readme-typing-svg.herokuapp.com?font=Philosopher&size=22&pause=500&color=FFFFFF&center=true&vCenter=true&width=460&height=50&lines=To+save+your+contribution+please+login;Next+time+you+can+access+it+easily+"
           alt="To save your contribution please login..."
         />
         <!-- Email input----- -->
@@ -159,7 +163,13 @@
                       value="1"
                     /><button id="ProductPlus1" class="plus-minus">+</button>
                   </div>
-                  <button id="resetBtn1" class="reset-product">Reset</button>
+                  <img
+                    onclick="resetBtn(1)"
+                    id="productReset1"
+                    class="reset-product"
+                    src="img/redo.svg"
+                    alt=""
+                  />
                 </div>
                 <p class="product-info">
                   <strong
@@ -173,7 +183,7 @@
             </button>
           </div>
           <div class="product">
-            <img class="box" src="bg.jpg" alt="" />
+            <img class="box" src="img/lp-0.jpg" alt="" />
             <div class="module">
               <p class="product-name">
                 <strong>MACBOOK PRO MINI</strong> <br />
@@ -194,11 +204,58 @@
                       value="1"
                     /><button id="ProductPlus2" class="plus-minus">+</button>
                   </div>
-                  <button id="resetBtn2" class="reset-product">Reset</button>
+                  <img
+                    onclick="resetBtn(2)"
+                    id="productReset2"
+                    class="reset-product"
+                    src="img/redo.svg"
+                    alt=""
+                  />
                 </div>
                 <p class="product-info">
                   <strong
                     >Price: $<span class="price" id="productPrice2">1250</span>
+                  </strong>
+                </p>
+              </div>
+            </div>
+            <button class="button">
+              <i class="gg-shopping-cart"></i> Add To Cart
+            </button>
+          </div>
+          <div class="product">
+            <img class="box" src="img/lp-8.jpg" alt="" />
+            <div class="module">
+              <p class="product-name">
+                <strong>MACBOOK PRO MINI</strong> <br />
+              </p>
+              <div>
+                <p class="product-info"><strong>Brand:</strong> Apple.</p>
+                <p class="product-info"><strong>Model:</strong> mb-pro m3</p>
+                <p class="product-info"><strong>Color:</strong> Gray.</p>
+                <div class="product-info">
+                  <strong>Quantity:</strong>
+                  <div class="qty-bar">
+                    <!----- buttons will work also this onClick function.
+                      onclick="counter(false,1150)"------>
+                    <button id="ProductMinus3" class="plus-minus">-</button>
+                    <input
+                      id="productInput3"
+                      class="Qty-input"
+                      value="1"
+                    /><button id="ProductPlus3" class="plus-minus">+</button>
+                  </div>
+                  <img
+                    onclick="resetBtn(3)"
+                    id="productReset3"
+                    class="reset-product"
+                    src="img/redo.svg"
+                    alt=""
+                  />
+                </div>
+                <p class="product-info">
+                  <strong
+                    >Price: $<span class="price" id="productPrice3">1280</span>
                   </strong>
                 </p>
               </div>

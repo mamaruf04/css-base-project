@@ -4,7 +4,7 @@
 // const productPrice = document.getElementById("productPrice1");
 
 // increase & decrease function.
-const counter = (productNumber, isIncrease, Price) =>{
+const counter = (productNumber, isIncreaseOrReset, Price) =>{
 
     // product price 
     const productPrice = document.getElementById('productPrice'+productNumber);
@@ -14,10 +14,13 @@ const counter = (productNumber, isIncrease, Price) =>{
 
     // product quantity increase.
     let productInputValue = productInput.value;
-    if(isIncrease){
+    if(isIncreaseOrReset === null){
+        productInputValue = 1;
+    }
+    else if(isIncreaseOrReset){
         productInputValue ++;
     } 
-    else if (!isIncrease && productInputValue > 1) {
+    else if (!isIncreaseOrReset && productInputValue > 1) {
         productInputValue --;
     }
     else{
@@ -30,6 +33,15 @@ const counter = (productNumber, isIncrease, Price) =>{
     // product price based on quantity.
     let totalPrice = productInputValue * Price;
     productPrice.innerText = totalPrice;
+}
+
+// reset product
+const resetBtn = (productNum) =>{
+    const productPrice = document.getElementById('productPrice'+productNum).innerText;
+    const productInput = document.getElementById('productInput'+ productNum).value;
+
+    const perProductPrice = productPrice / productInput;
+    counter(productNum,null,perProductPrice);
 }
 
 
@@ -62,14 +74,14 @@ document.getElementById("ProductPlus2").addEventListener('click', () => {
 // minus button product-3.
 document.getElementById("ProductMinus3").addEventListener('click', () => {
 
-    counter(3,false,1150);
+    counter(3,false,1280);
 
 });
 
 // plus button product-3.
 document.getElementById("ProductPlus3").addEventListener('click', () => {
 
-    counter(3,true,1150);
+    counter(3,true,1280);
 
 });
 // minus button product-4.
