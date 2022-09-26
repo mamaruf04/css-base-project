@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Philosopher:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 html,
 body {
   background-image: url(bg.jpg);
   background-size: contain;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .navbar {
   font-family: Philosopher;
@@ -74,13 +77,14 @@ body {
   /* color: rgba(136, 33, 255, 0.568); */
 }
 .lock-icon {
-  width: 150px;
+  width: 200px;
   margin: 0;
   padding: 0;
 }
 .login-heading {
   font-size: 2.5rem;
   color: #ffffff;
+  width: 600px;
 }
 .login-heading-mbl {
   display: none;
@@ -88,16 +92,19 @@ body {
 .login {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  margin-top: 50px;
-  padding: 25px 0 45px 0;
+  margin-top: 92px;
+  padding: 40px 0px 20px 0;
   border-width: 6px;
   border-style: solid;
-  background-color: #5920cb;
+  /* background-color: #ac32e4; */
+  background: linear-gradient(#9424f0, #538ffb);
   border-radius: 25px;
   border-image: linear-gradient(to bottom, #e0ffff, rgba(0, 0, 0, 0)) 1 100%;
-  /* order: 2; */
+  border-top: none;
+  border-bottom: none;
+  height: 400px;
 }
 h1 {
   font-size: 4rem;
@@ -190,48 +197,59 @@ password validation
 
 /* =================== */
 .button {
-  background: linear-gradient(-225deg, #ac32e4 0%, #7918f2 48%, #4801ff 100%);
-  display: flex;
-  gap: 5px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  color: white;
-  font-size: 20px;
-  font-weight: 700;
-  transition: 0.2s;
-  border: none;
-  margin: 30px 0 15px 0;
-}
-.button:hover {
   background: radial-gradient(
     circle at 10% 20%,
     rgb(64, 84, 178) 0%,
     rgb(219, 2, 234) 90%
   );
+  display: flex;
+  gap: 5px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  transition: 0.2s;
+  cursor: pointer;
+  border: none;
+  margin: 30px 0 10px 0;
+}
+.button:hover {
+  background: linear-gradient(-225deg, #ac32e4 0%, #7918f2 48%, #4801ff 100%);
   color: white;
 }
 .button:active {
   transform: translate(-5px, 5px);
 }
+.btn-login {
+  margin: 10px 0 10px 0;
+  padding: 8px 25px;
+}
 .auth-link {
   margin: 8px;
   font-size: 1.2rem;
   color: #ffffff;
-  font-weight: 500;
+  font-weight: 600;
 }
-.colour-black {
-  color: black;
+.privacy-policy {
+  padding: 10px;
+}
+.policy-color {
+  color: #0b2c88;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.forgot-signin {
+  color: indigo;
 }
 a {
   text-decoration: none;
 }
-.module {
+.product-module {
   font-family: "Josefin Sans", sans-serif;
   max-width: 380px;
   padding: 1rem;
   border-width: 3px;
-  border-image: linear-gradient(to bottom, rgb(0, 255, 221), rgba(1, 0, 0, 0)) 1
-    100%;
   height: 250px;
 }
 .container {
@@ -294,6 +312,7 @@ a {
   color: white;
   background: none;
   font-size: 19px;
+  cursor: pointer;
   border: none;
   list-style: none;
   align-items: center;
@@ -301,6 +320,7 @@ a {
 .reset-product {
   padding: 2px 5px;
   border-radius: 10px;
+  cursor: pointer;
   list-style: none;
   align-items: center;
   background: rgb(247, 39, 39);
@@ -440,6 +460,121 @@ section extra
   text-align: center;
 }
 
+/* ------------------------------review section------------------------------- */
+
+.review-section {
+  /* min-height: 100vh; */
+  width: 100vw;
+  font-family: "Poppins", sans-serif;
+}
+.slide-container {
+  height: 500px;
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+}
+.slide-content {
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.card {
+  border-radius: 25px;
+  background-color: #fff;
+}
+.image-content,
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+.image-content {
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  /* background-color: #4070f4; */
+  background-color: #ac32e4;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #ac32e4;
+}
+.overlay::after {
+  border-radius: 0 25px 0 0;
+  background-color: #fff;
+}
+.card-image {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 3px;
+}
+.card-image .card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ac32e4;
+}
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+.description {
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+}
+.button-rvw {
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  padding: 8px 16px;
+  background-color: #ac32e4;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button-rvw:hover {
+  background: #992bcc;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+  font-size: 35px;
+}
+.swiper-button-next {
+  right: 0;
+}
+.swiper-button-prev {
+  left: 0;
+}
+.swiper-pagination-bullet {
+  background-color: #6e93f7;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: #4070f4;
+}
+
 /* ------------------------------------------footer--------------------------- */
 .dewo {
   width: 100%;
@@ -501,6 +636,7 @@ section extra
 /*-----------------------------------------------
  responsive 
  ----------------------------------------------*/
+
 @media only screen and (max-width: 644px) {
   body {
     background-image: url(img/lp-0.jpg);
@@ -514,13 +650,13 @@ section extra
   }
   .nav-btn-flex-column {
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
   }
   .right-nav {
     position: fixed;
     height: 100vh;
-    background: #ff34fff8;
+    background: #6f00ed;
     top: 0px;
     padding: 0rem 5rem;
     z-index: 1;
@@ -533,7 +669,7 @@ section extra
   .nav-item {
     margin-bottom: 30px;
   }
-  /* ----------hambergar menu */
+  /* ----------hamburger menu */
 
   .menu {
     background-color: transparent;
@@ -588,26 +724,30 @@ section extra
   }
   /* /-----------------*  */
 
+  .lock-icon {
+    width: 170px;
+    margin-bottom: 10px;
+  }
   .login {
-    margin-top: 0px;
-    /* order: 2; */
-    background: none;
-    padding: 0px 0 45px 0;
+    margin-top: 85px;
+    padding: 30px 0;
+    border: none;
+    width: 366px;
   }
   .input-field {
     width: 300px;
+    height: 45px;
   }
-  .colour-black {
+  .privacy-color {
     color: lightcyan;
   }
   .auth-link {
-    color: #a65eff;
-  }
-  .login-heading {
-    font-size: 1.2rem;
+    /* color: #a65eff; */
+    font-size: 1rem;
   }
   .login-heading-mbl {
     display: block;
+    width: 450px;
   }
   .login-heading-pc {
     display: none;
@@ -636,12 +776,13 @@ section extra
   .container {
     grid-template-columns: repeat(1, 1fr);
   }
-  .module {
+  .product-module {
     padding: 1rem;
     margin: 0 1rem;
+    border-image: none;
   }
   .button {
-    width: 180px;
+    /* width: 180px; */
     justify-content: center;
   }
   .product {
@@ -687,6 +828,14 @@ section extra
     height: 100%;
     font-weight: 600;
     font-size: 1.6rem;
+  }
+
+  /* review section responsive */
+  .slide-content {
+    margin: 0 10px;
+  }
+  .swiper-navBtn {
+    display: none;
   }
   /* -----------footer------------------- */
   .waves {

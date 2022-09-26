@@ -24,7 +24,12 @@ const counter = (productNumber, isIncreaseOrReset, Price) =>{
         productInputValue --;
     }
     else{
-        alert("please add some quantities.");
+        // sweet alert
+        Swal.fire(
+            'Please add some quantities!',
+            '',
+            'warning',
+          )
     }
 
     // update product value.
@@ -42,8 +47,10 @@ const resetBtn = (productNum) =>{
 
     const perProductPrice = productPrice / productInput;
     counter(productNum,null,perProductPrice);
-}
 
+
+    
+}
 
 // minus button product-1.
 document.getElementById("ProductMinus1").addEventListener('click', () => {
