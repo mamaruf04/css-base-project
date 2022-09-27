@@ -97,9 +97,9 @@ body {
   padding: 40px 0px 20px 0;
   border-width: 5px;
   border-style: solid;
-  background: linear-gradient(#6f00ed, #ff41ff);
+  background: linear-gradient(#6f00ed, #edbf69);
   border-radius: 25px;
-  border-image: linear-gradient(to bottom, #ff41ff, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, #6ac47e, rgba(0, 0, 0, 0)) 1 100%;
   border-top: none;
   border-bottom: none;
   height: 400px;
@@ -288,7 +288,7 @@ a {
   width: 280px;
   height: 225px;
   border-radius: 23px;
-  box-shadow: rgb(222, 184, 248) 0px 0px 0px 0px;
+  box-shadow: rgb(222, 184, 248) 0px 0px 1px 1px;
   background-color: #cdcfd1;
 }
 .Qty-input {
