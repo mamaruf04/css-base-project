@@ -1,0 +1,72 @@
+[
+  {
+    "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "MACBOOK PRO",
+    "img": "https://i.ibb.co/55Q6R1Q/bg.jpg",
+    "Brand": "Apple",
+    "Model": "mb-pro m3",
+    "Color": "Gray",
+    "Quantity": 1,
+    "Price": 1150
+  },
+  {
+    "id": "134e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "MACBOOK PRO MINI",
+    "img": "https://i.ibb.co/c3ZZhzK/lp-8.jpg",
+    "Brand": "Apple",
+    "Model": "mb-pro mlg",
+    "Color": "Black",
+    "Quantity": 1,
+    "Price": 1250
+  },
+  {
+    "id": "144e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "MACBOOK MINI",
+    "img": "https://i.ibb.co/H2GxBSv/lp-0.jpg",
+    "Brand": "Apple",
+    "Model": "mb-pro m843",
+    "Color": "Purple",
+    "Quantity": 1,
+    "Price": 1190
+  },
+  {
+    "id": "154e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "MACBOOK ENDOR",
+    "img": "https://i.ibb.co/HGt5Y1W/lp3.jpg",
+    "Brand": "Apple",
+    "Model": "mb-mxp33",
+    "Color": "Blue",
+    "Quantity": 1,
+    "Price": 1050
+  },
+  {
+    "id": "164e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "MACBOOK ENSOR PRO",
+    "img": "https://i.ibb.co/v3dzhWX/1-Iu-O4r-KT05h-KEWZYZx-Hk-v-Q.jpg",
+    "Brand": "Apple",
+    "Model": "mb-pro mzp3",
+    "Color": "Gray",
+    "Quantity": 1,
+    "Price": 1199
+  },
+  {
+    "id": "174e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "HP GRANGE PRO",
+    "img": "https://i.ibb.co/kQKjLX4/lp2.jpg",
+    "Brand": "HP",
+    "Model": "hp-fermi m3",
+    "Color": "Gray",
+    "Quantity": 1,
+    "Price": 1350
+  },
+  {
+    "id": "184e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "HP GRANGE MINI",
+    "img": "https://i.ibb.co/1RKGSGR/lp5.jpg",
+    "Brand": "HP",
+    "Model": "hp-clonk p7",
+    "Color": "BLACK",
+    "Quantity": 1,
+    "Price": 1550
+  }
+]

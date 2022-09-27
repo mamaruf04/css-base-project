@@ -121,5 +121,3 @@
         menu.setAttribute('aria-expanded',
         menu.classList.contains('opened')); 
     }
-
-   

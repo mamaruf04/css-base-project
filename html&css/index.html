@@ -154,132 +154,9 @@
       <h1 class="product-heading">
         Choose our <span class="special-color">Exclusive</span> laptops
       </h1>
+      <button onclick="loadProductsDtls()">click here.</button>
       <div>
-        <div class="container">
-          <div class="product">
-            <img class="box" src="bg.jpg" alt="" />
-            <div class="product-module">
-              <p class="product-name">
-                <strong>MACBOOK PRO MINI</strong> <br />
-              </p>
-              <div>
-                <p class="product-info"><strong>Brand:</strong> Apple.</p>
-                <p class="product-info"><strong>Model:</strong> mb-pro m3</p>
-                <p class="product-info"><strong>Color:</strong> Gray.</p>
-                <div class="product-info">
-                  <strong>Quantity:</strong>
-                  <div class="qty-bar">
-                    <!----- buttons will work also this onClick function.
-                      onclick="counter(false,1150)"------>
-                    <button id="ProductMinus1" class="plus-minus">-</button>
-                    <input
-                      id="productInput1"
-                      class="Qty-input"
-                      value="1"
-                    /><button id="ProductPlus1" class="plus-minus">+</button>
-                  </div>
-                  <img
-                    onclick="resetBtn(1)"
-                    id="productReset1"
-                    class="reset-product"
-                    src="img/redo.svg"
-                    alt=""
-                  />
-                </div>
-                <p class="product-info">
-                  <strong
-                    >Price: $<span class="price" id="productPrice1">1150</span>
-                  </strong>
-                </p>
-              </div>
-            </div>
-            <button class="button">
-              <i class="gg-shopping-cart"></i> Add To Cart
-            </button>
-          </div>
-          <div class="product">
-            <img class="box" src="img/lp-0.jpg" alt="" />
-            <div class="product-module">
-              <p class="product-name">
-                <strong>MACBOOK PRO MINI</strong> <br />
-              </p>
-              <div>
-                <p class="product-info"><strong>Brand:</strong> Apple.</p>
-                <p class="product-info"><strong>Model:</strong> mb-pro m3</p>
-                <p class="product-info"><strong>Color:</strong> Gray.</p>
-                <div class="product-info">
-                  <strong>Quantity:</strong>
-                  <div class="qty-bar">
-                    <!----- buttons will work also this onClick function.
-                      onclick="counter(false,1150)"------>
-                    <button id="ProductMinus2" class="plus-minus">-</button>
-                    <input
-                      id="productInput2"
-                      class="Qty-input"
-                      value="1"
-                    /><button id="ProductPlus2" class="plus-minus">+</button>
-                  </div>
-                  <img
-                    onclick="resetBtn(2)"
-                    id="productReset2"
-                    class="reset-product"
-                    src="img/redo.svg"
-                    alt=""
-                  />
-                </div>
-                <p class="product-info">
-                  <strong
-                    >Price: $<span class="price" id="productPrice2">1250</span>
-                  </strong>
-                </p>
-              </div>
-            </div>
-            <button class="button">
-              <i class="gg-shopping-cart"></i> Add To Cart
-            </button>
-          </div>
-          <div class="product">
-            <img class="box" src="img/lp-8.jpg" alt="" />
-            <div class="product-module">
-              <p class="product-name">
-                <strong>MACBOOK PRO MINI</strong> <br />
-              </p>
-              <div>
-                <p class="product-info"><strong>Brand:</strong> Apple.</p>
-                <p class="product-info"><strong>Model:</strong> mb-pro m3</p>
-                <p class="product-info"><strong>Color:</strong> Gray.</p>
-                <div class="product-info">
-                  <strong>Quantity:</strong>
-                  <div class="qty-bar">
-                    <!----- buttons will work also this onClick function.
-                      onclick="counter(false,1150)"------>
-                    <button id="ProductMinus3" class="plus-minus">-</button>
-                    <input
-                      id="productInput3"
-                      class="Qty-input"
-                      value="1"
-                    /><button id="ProductPlus3" class="plus-minus">+</button>
-                  </div>
-                  <img
-                    onclick="resetBtn(3)"
-                    id="productReset3"
-                    class="reset-product"
-                    src="img/redo.svg"
-                    alt=""
-                  />
-                </div>
-                <p class="product-info">
-                  <strong
-                    >Price: $<span class="price" id="productPrice3">1280</span>
-                  </strong>
-                </p>
-              </div>
-            </div>
-            <button class="button">
-              <i class="gg-shopping-cart"></i> Add To Cart
-            </button>
-          </div>
-        </div>
+        <div id="productParent" class="container"></div>
       </div>
 
       <!-- -----------------------review section-------------------- -->
@@ -529,6 +406,7 @@
   <!-- main js -->
   <script src="script.js"></script>
   <script src="productsQty.js"></script>
+  <script src="products.js"></script>
 
   <!-- alert -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
