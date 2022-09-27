@@ -1,10 +1,12 @@
+// load products
 const loadProducts = () =>{
     fetch("data.json")
     .then(res => res.json())
     .then(products => product(products));
 }
+loadProducts();
 
-// const product =  product.map(product => console.log(product));
+
 const product = products => {
 
     const productParent = document.getElementById('productParent');
@@ -24,25 +26,23 @@ const product = products => {
         <div class="product-info">
           <strong>Quantity:</strong>
           <div class="qty-bar">
-            <button id="productMinus1" class="plus-minus">-</button>
+            <button onclick="counter('${id}',false,'${Price}')"  class="plus-minus">-</button>
             <input
               id="${id}"
               class="Qty-input"
               value="${Quantity}"
-            /><button id="productPlus1" class="plus-minus">+</button>
+            /><button onclick="counter('${id}',true,'${Price}')"  class="plus-minus">+</button>
           </div>
           <img
-            onclick="resetBtn(1)"
-            id="${id}"
+            onclick="resetBtn('${id}')"
             class="reset-product"
             src="img/redo.svg"
             alt=""
           />
         </div>
-        <p>${id}</p>
         <p class="product-info">
           <strong
-            >Price: $<span class="price" id="${id}">${Price}</span>
+            >Price: $<span class="price" id="${id}price">${Price}</span>
           </strong>
         </p>
       </div>
@@ -52,9 +52,76 @@ const product = products => {
             </button>
           </div>`
       productParent.appendChild(productDiv);
-    });
-    
-      
+    });      
+}
+// -----------------------------------------------------------------------------------------
+
+// increase & decrease function.
+const counter = (productId, isIncreaseOrReset, Price) =>{
+
+  // product price 
+  const productPrice = document.getElementById(productId+'price');
+
+  // product quantity input field
+  const productInput = document.getElementById(productId);
+
+  // product quantity increase.
+  let productInputValue = productInput.value;
+  if(isIncreaseOrReset === null){
+      productInputValue = 1;
+  }
+  else if(isIncreaseOrReset){
+      productInputValue ++;
+  } 
+  else if (!isIncreaseOrReset && productInputValue > 1) {
+      productInputValue --;
+  }
+  else{
+      // sweet alert
+      Swal.fire(
+          'Please add some quantities!',
+          '',
+          'warning',
+        )
+  }
+  // update product value.
+  productInput.value = productInputValue;
+
+  // product price based on quantity.
+  let totalPrice = productInputValue * Price;
+  productPrice.innerText = totalPrice;
 }
 
-loadProducts()
+// reset product
+const resetBtn = (productId) =>{
+  const productPrice = document.getElementById(productId+'price').innerText;
+  const productInput = document.getElementById(productId).value;
+
+  const perProductPrice = productPrice / productInput;
+  counter(productId,null,perProductPrice);  
+}
+
+// -----------------------------------------------------
+// load data from json file.
+// const loadProductsDtls = (id, isIncreaseOrReset) =>{
+//   // console.log(id);
+//   fetch("data.json")
+//   .then(res => res.json())
+//   .then(products => {
+//     const product = products.find((product) => product.id == id);
+//     console.log(product);
+//   });
+// }
+
+
+
+
+
+
+// const productDtl = (products) => {
+//   products.map(product => {
+//       // console.log(count);
+//       const {id,name,Price,Quantity} = product ;
+//       console.log(id,name,Price,Quantity);
+//       })   
+// }
