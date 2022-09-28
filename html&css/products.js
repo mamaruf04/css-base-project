@@ -100,6 +100,20 @@ const resetBtn = (productId) =>{
   const perProductPrice = productPrice / productInput;
   counter(productId,null,perProductPrice);  
 }
+
+// when cart is empty the cart container will hidden.
+const isEmptyCart = () => {
+  const card = document.getElementById('carts');
+    if (card.innerHTML == "") {
+      card.parentNode.style.display="none";
+    }
+    else{
+      card.parentNode.style.display="flex";
+    }
+}
+
+isEmptyCart();
+
 // -----------------------------------------------------
 // load data from json file.
 const loadProductsDtls = (id) =>{
@@ -114,7 +128,7 @@ const loadProductsDtls = (id) =>{
     cart.innerHTML = `
       <img class="cart-img" src="${img}" alt="" />
       <div class="cart-info">
-        <h2 class="cart-text">${name}</h2>
+        <h2 class="cart-name">${name}</h2>
         <p class="cart-text"><strong>Model:</strong> ${Model}</p>
         <p class="cart-text"><strong>Quantity:</strong> ${Quantity}</p>
         <p class="cart-text"><strong>Price:</strong> $${Price}</p>
@@ -133,7 +147,6 @@ const loadProductsDtls = (id) =>{
       // sweet alert------
       Swal.fire({
         title: 'Are you sure?',
-        
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -142,14 +155,25 @@ const loadProductsDtls = (id) =>{
       }).then((result) => {
         if (result.isConfirmed) {
           carts.removeChild(cart);
+          isEmptyCart();
         }
       })
     })
-    // if(cart.innerHTML = " "){
-    //   document.getElementById('"empty-cart').removeAttribute('empty');
-    // }else{
-    //   document.getElementById('"empty-cart').setAttribute('empty');
-    // }
-    // ------------
+
+    isEmptyCart(); 
+
   });
+  // Document.getElementById('apple').addEventListener('click', () => {
+  //   console.log('get the apple')
+  //   const topBrands = Brand => {
+  //     fetch("data.json")
+  //     .then(res => res.json())
+  //     .then(TopBrands => {
+  //       console.log(TopBrands);
+  //       const TopBrand = TopBrand.find( TopBrands.Brand == Brand);
+  //       topBrands(APPLE);
+  //       console.log(TopBrands);
+  //       })
+  //   }
+  // })
 }

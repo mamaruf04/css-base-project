@@ -40,7 +40,7 @@
     "Price": 1050
   },
   {
-    "id": "164e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "id": "168e13b9-2d54-4b2f-a74d-a77b362d6ead",
     "name": "MACBOOK ENSOR PRO",
     "img": "https://i.ibb.co/v3dzhWX/1-Iu-O4r-KT05h-KEWZYZx-Hk-v-Q.jpg",
     "Brand": "Apple",
@@ -50,10 +50,90 @@
     "Price": 1199
   },
   {
-    "id": "174e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "id": "179e13b9-2d54-4b2f-a74d-a77b362d6ead",
     "name": "HP GRANGE PRO",
-    "img": "https://i.ibb.co/kQKjLX4/lp2.jpg",
+    "img": "https://i.ibb.co/SXtdFNF/lp-12.png",
     "Brand": "HP",
+    "Model": "hp-fermi m3",
+    "Color": "Gray",
+    "Quantity": 1,
+    "Price": 1390
+  },
+  {
+    "id": "170e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "HP GRANGE PRO",
+    "img": "https://i.ibb.co/c8prRpn/lp-15-hp.jpg",
+    "Brand": "HP",
+    "Model": "hp-fermi m3",
+    "Color": "Gray",
+    "Quantity": 1,
+    "Price": 1750
+  },
+  {
+    "id": "171e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "HP MARTEL PRO",
+    "img": "https://i.ibb.co/7VFBMD5/lp-16-hp.jpg",
+    "Brand": "HP",
+    "Model": "hp-fermi m3",
+    "Color": "Gray",
+    "Quantity": 1,
+    "Price": 1850
+  },
+  {
+    "id": "172e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "HP MARTEL",
+    "img": "https://i.ibb.co/GFmxjnQ/lp-20.png",
+    "Brand": "HP",
+    "Model": "hp-fermi m3",
+    "Color": "Gray",
+    "Quantity": 1,
+    "Price": 1650
+  },
+  {
+    "id": "173e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "ASUS GRANGE PRO",
+    "img": "https://i.ibb.co/mR1tc7W/lp-13.png",
+    "Brand": "ASUS",
+    "Model": "hp-fermi m3",
+    "Color": "Gray",
+    "Quantity": 1,
+    "Price": 1359
+  },
+  {
+    "id": "174e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "ASUS GRANGE PRO",
+    "img": "https://i.ibb.co/SmM5GrF/lp-14.jpg",
+    "Brand": "ASUS",
+    "Model": "hp-fermi m3",
+    "Color": "Gray",
+    "Quantity": 1,
+    "Price": 1950
+  },
+  {
+    "id": "175e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "ASUS GRANGE LITE",
+    "img": "https://i.ibb.co/4PvZmg2/lp-18-hp.jpg",
+    "Brand": "ASUS",
+    "Model": "hp-fermi m3",
+    "Color": "Gray",
+    "Quantity": 1,
+    "Price": 1310
+  },
+  {
+    "id": "176e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "HP GRANGE PRO",
+    "img": "https://i.ibb.co/mzPV1Mr/lp-17-hp.jpg",
+    "Brand": "HP",
+    "Model": "hp-fermi m3",
+    "Color": "Gray",
+    "Quantity": 1,
+    "Price": 1750
+  },
+  {
+    "id": "177e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "name": "LENOVO GRANGE",
+    "img": "https://i.ibb.co/C1s3jN8/lp-11.png",
+    "Brand": "LENOVO",
     "Model": "hp-fermi m3",
     "Color": "Gray",
     "Quantity": 1,
@@ -61,9 +141,9 @@
   },
   {
     "id": "184e13b9-2d54-4b2f-a74d-a77b362d6ead",
-    "name": "HP GRANGE MINI",
+    "name": "LENOVO SKTE MINI",
     "img": "https://i.ibb.co/1RKGSGR/lp5.jpg",
-    "Brand": "HP",
+    "Brand": "LENOVO",
     "Model": "hp-clonk p7",
     "Color": "BLACK",
     "Quantity": 1,

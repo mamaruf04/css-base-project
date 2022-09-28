@@ -27,6 +27,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!--review CSS -->
     <!-- <link rel="stylesheet" href="review.css" /> -->
@@ -132,32 +134,33 @@
       <div>
         <h2 class="brand-heading-mbl">Top Brands</h2>
       </div>
-      <section class="extra-section">
-        <div class="all">
-          <div class="lefter">
-            <div class="text">APPLE</div>
-          </div>
-          <div class="left">
-            <div class="text">HP</div>
-          </div>
-          <div class="center">
-            <div class="explainer"><span>Top Brands</span></div>
-          </div>
-          <div class="right">
-            <div class="text">ASUS</div>
-          </div>
-          <div class="righter">
-            <div class="text nf">LENOVO</div>
+      <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+        <div class="extra-section">
+          <div class="all">
+            <div id="apple" class="lefter">
+              <div class="text">APPLE</div>
+            </div>
+            <div class="left">
+              <div id="hp" class="text">HP</div>
+            </div>
+            <div class="center">
+              <div class="explainer"><span>Top Brands</span></div>
+            </div>
+            <div class="right">
+              <div id="asus" class="text">ASUS</div>
+            </div>
+            <div class="righter">
+              <div id="lenovo" class="text nf">LENOVO</div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+      <div>
+        <div id="TopBrands" class="container"></div>
+      </div>
       <div class="cart-container">
-        <h1 class="cart-heading">Your Cart</h1>
-        <div id="carts" class="carts">
-          <p id="empty-cart" class="empty">
-            You haven't add any product in your cart.
-          </p>
-        </div>
+        <h1 class="cart-heading">CART</h1>
+        <div id="carts" class="carts"></div>
       </div>
       <h1 class="product-heading">
         Choose our <span class="special-color">Exclusive</span> laptops
@@ -408,6 +411,11 @@
       </div>
       <!--Waves end-->
     </section>
+    <!-- Aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
   <!-- main js -->
   <script src="script.js"></script>
