@@ -47,7 +47,7 @@ const product = products => {
         </p>
       </div>
       </div>
-            <button class="button">
+            <button onclick="loadProductsDtls('${id}')" class="button">
               <i class="gg-shopping-cart"></i> Add To Cart
             </button>
           </div>`
@@ -100,28 +100,56 @@ const resetBtn = (productId) =>{
   const perProductPrice = productPrice / productInput;
   counter(productId,null,perProductPrice);  
 }
-
 // -----------------------------------------------------
 // load data from json file.
-// const loadProductsDtls = (id, isIncreaseOrReset) =>{
-//   // console.log(id);
-//   fetch("data.json")
-//   .then(res => res.json())
-//   .then(products => {
-//     const product = products.find((product) => product.id == id);
-//     console.log(product);
-//   });
-// }
-
-
-
-
-
-
-// const productDtl = (products) => {
-//   products.map(product => {
-//       // console.log(count);
-//       const {id,name,Price,Quantity} = product ;
-//       console.log(id,name,Price,Quantity);
-//       })   
-// }
+const loadProductsDtls = (id) =>{
+  fetch("data.json")
+  .then(res => res.json())
+  .then(products => {
+    const carts = document.getElementById('carts');
+    const product = products.find((product) => product.id == id);
+    const {name,img,Model,Quantity,Price,Color} = product;
+    const cart = document.createElement('div');
+    cart.classList.add('cart');
+    cart.innerHTML = `
+      <img class="cart-img" src="${img}" alt="" />
+      <div class="cart-info">
+        <h2 class="cart-text">${name}</h2>
+        <p class="cart-text"><strong>Model:</strong> ${Model}</p>
+        <p class="cart-text"><strong>Quantity:</strong> ${Quantity}</p>
+        <p class="cart-text"><strong>Price:</strong> $${Price}</p>
+        </div>
+      <img id="dlt${id}" class="dlt-icon" src="img/delete-2.svg" alt="" />`
+    carts.appendChild(cart);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Add to cart successfully!',
+      showConfirmButton: false,
+      timer: 800
+    })
+    // delete function----------
+    document.getElementById(`dlt${id}`).addEventListener('click', () => {
+      // sweet alert------
+      Swal.fire({
+        title: 'Are you sure?',
+        
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Delete!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          carts.removeChild(cart);
+        }
+      })
+    })
+    // if(cart.innerHTML = " "){
+    //   document.getElementById('"empty-cart').removeAttribute('empty');
+    // }else{
+    //   document.getElementById('"empty-cart').setAttribute('empty');
+    // }
+    // ------------
+  });
+}

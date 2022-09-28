@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Philosopher:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Josefin Sans;
+} */
 html,
 body {
   background-image: url(bg.jpg);
@@ -9,6 +15,7 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
 .navbar {
   font-family: Philosopher;
   padding: 20px 25px;
@@ -243,12 +250,62 @@ password validation
 a {
   text-decoration: none;
 }
+/* -----------------------------cart --------------------- */
+.cart-container {
+  background: #f8f5f5;
+  height: 250px;
+  width: 442px;
+  margin: 40px 10px;
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  border: 5px solid #8950ff;
+}
+.cart-heading {
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+  color: rgb(90, 72, 255);
+}
+.cart {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: Josefin Sans;
+  margin: 10px auto;
+  box-shadow: 2px 1px 50px -2px rgba(121, 50, 252, 0.21);
+  gap: 15px;
+  border-radius: 20px;
+  padding: 10px;
+  background: white;
+}
+.cart-img {
+  width: 150px;
+  border-radius: 20px;
+}
+.cart-text {
+  font-size: 18px;
+  line-height: 0.5;
+}
+.dlt-icon {
+  width: 30px;
+  margin: 0 0 0 auto;
+}
+.empty {
+  display: none;
+}
+
+/* ------------------------------------------------------------- */
 .product-module {
   font-family: "Josefin Sans", sans-serif;
   max-width: 380px;
   padding: 1rem;
   border-width: 3px;
   height: 250px;
+  /* line-height: 2; */
 }
 .container {
   max-width: 1200px;
