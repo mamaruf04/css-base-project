@@ -2,14 +2,13 @@
 const loadProducts = () =>{
     fetch("data.json")
     .then(res => res.json())
-    .then(products => product(products));
+    .then(products => product(products,true));
 }
 loadProducts();
 
-
-const product = products => {
-
-    const productParent = document.getElementById('productParent');
+const product = (products,topOrAverage) => {
+    const AverageProducts = document.getElementById('AverageProducts');
+    const topProducts = document.getElementById('topProducts');
     products.forEach(product => {
         const {name,Brand,Model,Color,id,img,Quantity,Price} = product ;
         const productDiv = document.createElement('div');
@@ -47,15 +46,24 @@ const product = products => {
         </p>
       </div>
       </div>
-            <button onclick="loadProductsDtls('${id}')" class="button">
+            <button onclick="addToCart('${id}')" class="button">
               <i class="gg-shopping-cart"></i> Add To Cart
             </button>
           </div>`
-      productParent.appendChild(productDiv);
+          if(topOrAverage){
+            AverageProducts.appendChild(productDiv);
+          }else{
+            topProducts.appendChild(productDiv);
+          }
+          
     });      
 }
-// -----------------------------------------------------------------------------------------
 
+window.location.hash ='#nav-bar'
+const goHome = () => {
+  window.location.hash ='#home'
+}
+// -----------------------------------------------------------------------------------------
 // increase & decrease function.
 const counter = (productId, isIncreaseOrReset, Price) =>{
 
@@ -66,33 +74,33 @@ const counter = (productId, isIncreaseOrReset, Price) =>{
   const productInput = document.getElementById(productId);
 
   // product quantity increase.
-  let productInputValue = productInput.value;
+  let productQuantityValue = productInput.value;
   if(isIncreaseOrReset === null){
-      productInputValue = 1;
+      productQuantityValue = 1;
   }
   else if(isIncreaseOrReset){
-      productInputValue ++;
+      productQuantityValue ++;
   } 
-  else if (!isIncreaseOrReset && productInputValue > 1) {
-      productInputValue --;
+  else if (!isIncreaseOrReset && productQuantityValue > 1) {
+      productQuantityValue --;
   }
   else{
       // sweet alert
       Swal.fire(
           'Please add some quantities!',
-          '',
+          "",
           'warning',
         )
   }
   // update product value.
-  productInput.value = productInputValue;
+  productInput.value = productQuantityValue;
 
   // product price based on quantity.
-  let totalPrice = productInputValue * Price;
+  let totalPrice = productQuantityValue * Price;
   productPrice.innerText = totalPrice;
+  addToLocalStorage(productId,productQuantityValue,totalPrice);
 }
-
-// reset product
+// reset product 
 const resetBtn = (productId) =>{
   const productPrice = document.getElementById(productId+'price').innerText;
   const productInput = document.getElementById(productId).value;
@@ -100,6 +108,29 @@ const resetBtn = (productId) =>{
   const perProductPrice = productPrice / productInput;
   counter(productId,null,perProductPrice);  
 }
+
+const getFromLocalStorage = () =>{
+
+  const cart = localStorage.getItem('cart');
+  let cartObj;
+  if(cart){
+    cartObj = JSON.parse(cart);
+  }
+  else{
+    cartObj = {};
+  }
+  return cartObj;
+}
+
+// // set localStorage data
+const addToLocalStorage = (id,productQuantityValue) =>{
+  const cart = getFromLocalStorage(); 
+  cart[id] = productQuantityValue;
+
+const Product = JSON.stringify(cart);
+localStorage.setItem('cart',Product);
+}
+
 
 // when cart is empty the cart container will hidden.
 const isEmptyCart = () => {
@@ -111,18 +142,20 @@ const isEmptyCart = () => {
       card.parentNode.style.display="flex";
     }
 }
-
 isEmptyCart();
 
 // -----------------------------------------------------
 // load data from json file.
-const loadProductsDtls = (id) =>{
+const addToCart = (id) =>{
   fetch("data.json")
   .then(res => res.json())
   .then(products => {
+    const storeCart = localStorage.getItem('cart');
+    const storeCartParse = JSON.parse(storeCart);
+    const qty = storeCartParse[id];
     const carts = document.getElementById('carts');
-    const product = products.find((product) => product.id == id);
-    const {name,img,Model,Quantity,Price,Color} = product;
+    const product = products.find((product) => product.id == id );
+    const {name,img,Model,Price} = product;
     const cart = document.createElement('div');
     cart.classList.add('cart');
     cart.innerHTML = `
@@ -130,10 +163,11 @@ const loadProductsDtls = (id) =>{
       <div class="cart-info">
         <h2 class="cart-name">${name}</h2>
         <p class="cart-text"><strong>Model:</strong> ${Model}</p>
-        <p class="cart-text"><strong>Quantity:</strong> ${Quantity}</p>
-        <p class="cart-text"><strong>Price:</strong> $${Price}</p>
+        <p class="cart-text"><strong>Quantity:</strong> ${qty}</p>
+        <p class="cart-text"><strong>Price:</strong> $${Price * qty}</p>
         </div>
       <img id="dlt${id}" class="dlt-icon" src="img/delete-2.svg" alt="" />`
+      
     carts.appendChild(cart);
     Swal.fire({
       position: 'top-end',
@@ -142,6 +176,7 @@ const loadProductsDtls = (id) =>{
       showConfirmButton: false,
       timer: 800
     })
+
     // delete function----------
     document.getElementById(`dlt${id}`).addEventListener('click', () => {
       // sweet alert------
@@ -155,6 +190,7 @@ const loadProductsDtls = (id) =>{
       }).then((result) => {
         if (result.isConfirmed) {
           carts.removeChild(cart);
+          localStorage.removeItem('cart')
           isEmptyCart();
         }
       })
@@ -163,17 +199,20 @@ const loadProductsDtls = (id) =>{
     isEmptyCart(); 
 
   });
-  // Document.getElementById('apple').addEventListener('click', () => {
-  //   console.log('get the apple')
-  //   const topBrands = Brand => {
-  //     fetch("data.json")
-  //     .then(res => res.json())
-  //     .then(TopBrands => {
-  //       console.log(TopBrands);
-  //       const TopBrand = TopBrand.find( TopBrands.Brand == Brand);
-  //       topBrands(APPLE);
-  //       console.log(TopBrands);
-  //       })
-  //   }
-  // })
+  
 }
+document.getElementById('topProductSection').style.display = 'none';
+    const topBrands = Brand => {
+      fetch("data.json")
+      .then(res => res.json())
+      .then(TopBrands => {
+        const topProducts = document.getElementById('topProducts');
+        topProducts.textContent= "";
+        document.getElementById('topProductSection').style.display = 'block';
+        const topBrands = TopBrands.filter( TopBrand => TopBrand.Brand == Brand);
+        product(topBrands,false);
+        })
+      .catch(error => console.log("something went wrong!"))
+      
+        
+    }

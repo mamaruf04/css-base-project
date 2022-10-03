@@ -35,9 +35,9 @@
   </head>
   <body>
     <header>
-      <nav class="navbar">
+      <nav id="nav-bar" class="navbar">
         <div>
-          <img class="nav-img" src="img/logo.png" alt="" />
+          <img id="home" class="nav-img" src="img/logo.png" alt="" />
         </div>
         <div>
           <!-- ham bargar menu -->
@@ -84,7 +84,7 @@
           src="https://readme-typing-svg.herokuapp.com?font=Philosopher&size=22&pause=500&color=FFFFFF&center=true&vCenter=true&width=460&height=50&lines=To+save+your+contribution+please+login;Next+time+you+can+access+it+easily+"
           alt="To save your contribution please login..."
         />
-        <!-- Email input----- -->
+        <!-- Email input------->
         <div>
           <div class="input-field">
             <input
@@ -105,6 +105,7 @@
               title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
               required
             />
+
             <i class="uil uil-check-circle" id="passOk"></i>
           </div>
         </div>
@@ -123,7 +124,7 @@
           You are agreed by login with the
           <span class="policy-color"> privacy policy.</span>
         </small>
-        <button class="button btn-login">login</button>
+        <button id="loginBtn" class="button btn-login">login</button>
         <div>
           <a class="auth-link" href=""
             ><span class="forgot-signin"> Don't have an account? </span> Sign
@@ -134,48 +135,64 @@
       <div>
         <h2 class="brand-heading-mbl">Top Brands</h2>
       </div>
-      <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+
+      <div
+        id="extra-section"
+        data-aos="fade-up"
+        data-aos-anchor-placement="bottom-bottom"
+      >
         <div class="extra-section">
           <div class="all">
-            <div id="apple" class="lefter">
+            <div id="apple" onclick="topBrands('Apple')" class="lefter">
               <div class="text">APPLE</div>
             </div>
-            <div class="left">
-              <div id="hp" class="text">HP</div>
+            <div id="hp" onclick="topBrands('HP')" class="left">
+              <div class="text">HP</div>
             </div>
             <div class="center">
               <div class="explainer"><span>Top Brands</span></div>
             </div>
-            <div class="right">
-              <div id="asus" class="text">ASUS</div>
+            <div id="asus" onclick="topBrands('ASUS')" class="right">
+              <div class="text">ASUS</div>
             </div>
-            <div class="righter">
-              <div id="lenovo" class="text nf">LENOVO</div>
+            <div id="lenovo" onclick="topBrands('LENOVO')" class="righter">
+              <div class="text nf">LENOVO</div>
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <div id="TopBrands" class="container"></div>
-      </div>
-      <div class="cart-container">
+      <img
+        onclick="goHome()"
+        class="backHome"
+        src="img/go-up-icon.svg"
+        alt=""
+      />
+      <div id="cart-section" class="cart-container">
         <h1 class="cart-heading">CART</h1>
         <div id="carts" class="carts"></div>
+        <button class="btn">Place Order</button>
       </div>
-      <h1 class="product-heading">
-        Choose our <span class="special-color">Exclusive</span> laptops
-      </h1>
-      <div>
-        <div id="productParent" class="container"></div>
+      <!-- top brands product -->
+      <div id="topProductSection">
+        <h1 class="product-heading">Top Brand Products</h1>
+        <div id="topProducts" class="container"></div>
+      </div>
+
+      <!-- average product -->
+      <div id="productSection">
+        <h1 class="product-heading">
+          Choose our <span class="special-color">Exclusive</span> laptops
+        </h1>
+        <div id="AverageProducts" class="container"></div>
       </div>
 
       <!-- -----------------------review section-------------------- -->
       <h1>Reviews</h1>
-      <section class="review-section">
+      <section id="review" class="review-section">
         <div class="slide-container swiper">
           <div class="slide-content">
-            <div class="card-wrapper swiper-wrapper">
-              <div class="card swiper-slide">
+            <div id="review-parent" class="card-wrapper swiper-wrapper">
+              <!-- <div class="card swiper-slide">
                 <div class="image-content">
                   <span class="overlay"></span>
 
@@ -354,7 +371,7 @@
 
                   <button class="button-rvw">View More</button>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -365,7 +382,7 @@
       </section>
       <!------------------------------- footer --------------------------------------------->
       <!--Waves Container-->
-      <div class="dewo">
+      <div id="footer" class="dewo">
         <svg
           class="waves"
           xmlns="http://www.w3.org/2000/svg"
@@ -421,6 +438,7 @@
   <script src="script.js"></script>
   <script src="productsQty.js"></script>
   <script src="products.js"></script>
+  <script src="review.js"></script>
 
   <!-- alert -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

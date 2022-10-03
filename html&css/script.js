@@ -22,13 +22,14 @@
       // -------------------------------------------------
       // password Validation
       // -----------------------------------------------
-      let myInput = document.getElementById("psw");
-      let letter = document.getElementById("letter");
-      let capital = document.getElementById("capital");
-      let number = document.getElementById("number");
-      let length = document.getElementById("length");
-      let passApprove = document.getElementById("passOk");
-      let circleIcon = document.querySelector(".uil-check-circle");
+      const myInput = document.getElementById("psw");
+      const letter = document.getElementById("letter");
+      const capital = document.getElementById("capital");
+      const number = document.getElementById("number");
+      const length = document.getElementById("length");
+      const passApprove = document.getElementById("passOk");
+      const circleIcon = document.querySelector(".uil-check-circle");
+      const loginBtn = document.getElementById('loginBtn');
 
       // When the user clicks on the password field, show the message box
       myInput.onfocus = function () {
@@ -98,6 +99,11 @@
           passApprove.classList.remove("invalid");
           passApprove.classList.add("valid");
           passApprove.style.color = "#4bb543";
+          myInput.addEventListener('keypress', (event) => {
+            if(event.key == 'Enter'){
+              loginBtn.click();
+             }
+                    })
         } else {
           passApprove.classList.add("invalid");
           passApprove.classList.remove("valid");
@@ -105,6 +111,7 @@
         }
       };
 
+      
     //   ----------------------------------
     //   responsive hamburger menu
     //   -----------------------------------
